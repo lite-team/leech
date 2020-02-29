@@ -57,7 +57,7 @@ extension AppCoordinator {
     enum Component {
         static func `default`(window: UIWindow?) -> AppCoordinator {
             return AppCoordinator(
-                isStorybookTriggeredWorker: Worker.just(true),
+                isStorybookTriggeredWorker: Worker.just(false),
                 isAuthenticatedWorker: Worker { _ in AuthenticationManager.shared.isAuthenticated.toObservable
                 },
                 authenticationCoordinator: AuthenticationCoordinator(window: window),

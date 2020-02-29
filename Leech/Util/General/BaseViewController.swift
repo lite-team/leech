@@ -20,7 +20,7 @@ public class BaseViewController: UIViewController {
     }
 
     // MARK: - Private variables
-    private lazy var fakeNavigationBar: UINavigationBar = {
+    private(set) lazy var fakeNavigationBar: UINavigationBar = {
         let bar = UINavigationBar()
         bar.setBackgroundImage(UIImage(), for: .default)
         bar.isTranslucent = true
@@ -47,6 +47,7 @@ public class BaseViewController: UIViewController {
 }
 
 // MARK: - Public functions
+@objc
 extension BaseViewController {
     public var currentNavigationItem: UINavigationItem {
         return isTransparent ? fakeNavigationItem : navigationItem
@@ -103,6 +104,14 @@ extension BaseViewController {
         }
     }
 
+    public func enableLargeTitle(_ title: String?) {
+        if let title = title {
+            self.title = title
+            currentNavigationItem.largeTitleDisplayMode = .always
+        } else {
+            currentNavigationItem.largeTitleDisplayMode = .never
+        }
+    }
 }
 
 extension BaseViewController: UINavigationBarDelegate {

@@ -11,7 +11,11 @@ import UIKit
 // MARK: - Attributes
 public class ParagraphLabel: UILabel {
 
-    private let paragraphStyle = NSMutableParagraphStyle()
+    private let paragraphStyle: NSMutableParagraphStyle = {
+        let style = NSMutableParagraphStyle()
+        style.lineBreakMode = .byTruncatingTail
+        return style
+    }()
 
     public var kern: CGFloat? {
         didSet {
@@ -70,6 +74,19 @@ extension ParagraphLabel {
 
         get {
             return paragraphStyle.lineSpacing
+        }
+    }
+
+    public var lineHeight: CGFloat {
+        set {
+            paragraphStyle.minimumLineHeight = newValue
+            paragraphStyle.maximumLineHeight = newValue
+
+            build(text: attributedText)
+        }
+
+        get {
+            return paragraphStyle.minimumLineHeight
         }
     }
 

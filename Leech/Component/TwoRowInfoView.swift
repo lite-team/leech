@@ -22,8 +22,11 @@ extension TwoRowsInfoView {
 // MARK: - View
 final class TwoRowsInfoView: BaseView {
 
-    private let titleLabel = ParagraphLabel().style().heading2
-    private let subtitleLabel = ParagraphLabel().style().subtitle
+    private let titleLabel: ParagraphLabel = ParagraphLabel().style().heading2
+        .grab(numberOfLines: 0)
+
+    private let subtitleLabel: ParagraphLabel = ParagraphLabel().style().subtitle
+        .grab(numberOfLines: 0)
 
     private let imageView = UIImageView()
         .grab(masksToBounds: true)
@@ -61,8 +64,8 @@ final class TwoRowsInfoView: BaseView {
 // MARK: - Public functions
 extension TwoRowsInfoView {
     func configure(viewModel: Model) {
-        self.titleLabel.text = viewModel.title
-        self.subtitleLabel.text = viewModel.subtitle
+        self.titleLabel.paragraphText = viewModel.title
+        self.subtitleLabel.paragraphText = viewModel.subtitle
         self.imageView.backgroundColor = viewModel.placeholder
         self.imageView.isHidden = viewModel.isImageViewHidden
     }
@@ -79,8 +82,13 @@ extension TwoRowsInfoView: LayoutModelTestable {
             ("default", Model(
                 title: "Title",
                 subtitle: "Subtitle",
-                placeholder: R.color.indigoLight60(),
-                isImageViewHidden: false))
+                placeholder: R.color.redDark60(),
+                isImageViewHidden: false)),
+            ("long title", Model(
+                title: "Title super longgggggggggggggg adjfkasdjflajsfdlksajdlkf asdljflkasjdflajsdfljsaldf jlsadfj lasjdlf jsadlfj alsdfjl asdjflasjd lfjslkf jlkasdjf lkjlk",
+                subtitle: "Subtitle",
+                placeholder: R.color.redDark60(),
+                isImageViewHidden: true))
         ]
     }
 }

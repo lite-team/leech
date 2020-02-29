@@ -13,11 +13,10 @@ protocol Themeable: class {
     var invertTextColor: UIColor { get }
 
     var backgroundColor: UIColor { get }
-    var tintColor: UIColor { get }
 
-    var primaryButton: UIColor { get }
+    var primaryColor: UIColor { get }
 
-    var secondaryButton: UIColor { get }
+    var secondaryColor: UIColor { get }
 }
 
 
@@ -31,9 +30,9 @@ final class DefaultTheme: Themeable {
 
     var backgroundColor: UIColor { return .white }
 
-    var tintColor: UIColor { return R.color.indigo60() ?? .black }
+    var primaryColor: UIColor { return R.color.indigo60() ?? .black }
 
-    var primaryButton: UIColor { return R.color.indigo60() ?? .black }
-
-    var secondaryButton: UIColor { return R.color.red60() ?? .black }
+    var secondaryColor: UIColor { return R.color.red60() ?? .black }
 }
+
+var appTheme: Themeable = DefaultTheme.shared

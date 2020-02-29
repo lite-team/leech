@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4205A704233728F30078000F /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4205A703233728F30078000F /* MainTabViewController.swift */; };
+		4205A70E23372DA00078000F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4205A71023372DA00078000F /* Localizable.strings */; };
+		4205A7132337389A0078000F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4205A7122337389A0078000F /* HomeViewController.swift */; };
+		4205A71523373E8E0078000F /* LeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4205A71423373E8E0078000F /* LeechViewController.swift */; };
+		4205A719233743B10078000F /* LeechNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4205A718233743B10078000F /* LeechNavigationController.swift */; };
+		4205A71B2337532F0078000F /* HomeViewPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4205A71A2337532F0078000F /* HomeViewPresentable.swift */; };
+		4205A71D2337541D0078000F /* HomeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4205A71C2337541D0078000F /* HomeViewPresenter.swift */; };
 		420BCFD5231121BF00069BE1 /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420BCFD4231121BF00069BE1 /* Worker.swift */; };
 		420BCFD9231122B000069BE1 /* RxSwift+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420BCFD8231122B000069BE1 /* RxSwift+Extension.swift */; };
 		420BCFDB231125B500069BE1 /* RxSwift+RawObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420BCFDA231125B500069BE1 /* RxSwift+RawObservable.swift */; };
@@ -90,6 +97,15 @@
 		0D02D69DF1E88000680EE713 /* Pods-Leech.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Leech.release.xcconfig"; path = "Target Support Files/Pods-Leech/Pods-Leech.release.xcconfig"; sourceTree = "<group>"; };
 		13A440DC4DB9EF66A9BC23A9 /* Pods-LeechUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeechUITests.debug.xcconfig"; path = "Target Support Files/Pods-LeechUITests/Pods-LeechUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		15BBAFDF69C3AB14C7A7E6C6 /* Pods_Leech.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Leech.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4205A703233728F30078000F /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
+		4205A70D23372D960078000F /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		4205A70F23372DA00078000F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4205A71123372DA40078000F /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4205A7122337389A0078000F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4205A71423373E8E0078000F /* LeechViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeechViewController.swift; sourceTree = "<group>"; };
+		4205A718233743B10078000F /* LeechNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeechNavigationController.swift; sourceTree = "<group>"; };
+		4205A71A2337532F0078000F /* HomeViewPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewPresentable.swift; sourceTree = "<group>"; };
+		4205A71C2337541D0078000F /* HomeViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewPresenter.swift; sourceTree = "<group>"; };
 		420BCFD4231121BF00069BE1 /* Worker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
 		420BCFD8231122B000069BE1 /* RxSwift+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Extension.swift"; sourceTree = "<group>"; };
 		420BCFDA231125B500069BE1 /* RxSwift+RawObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+RawObservable.swift"; sourceTree = "<group>"; };
@@ -195,6 +211,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4205A701233728BF0078000F /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				4205A70923372B990078000F /* Profile */,
+				4205A70823372B910078000F /* Notification */,
+				4205A70723372B840078000F /* Sell */,
+				4205A70623372B800078000F /* Stuff */,
+				4205A70523372B760078000F /* Home */,
+				4205A702233728CB0078000F /* Main */,
+				4205A71423373E8E0078000F /* LeechViewController.swift */,
+				4205A718233743B10078000F /* LeechNavigationController.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		4205A702233728CB0078000F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4205A703233728F30078000F /* MainTabViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4205A70523372B760078000F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4205A7122337389A0078000F /* HomeViewController.swift */,
+				4205A71A2337532F0078000F /* HomeViewPresentable.swift */,
+				4205A71C2337541D0078000F /* HomeViewPresenter.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4205A70623372B800078000F /* Stuff */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stuff;
+			sourceTree = "<group>";
+		};
+		4205A70723372B840078000F /* Sell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sell;
+			sourceTree = "<group>";
+		};
+		4205A70823372B910078000F /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		4205A70923372B990078000F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		420BCFD62311223000069BE1 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,6 +422,7 @@
 		42F8450B2310E0FF00D1F380 /* Leech */ = {
 			isa = PBXGroup;
 			children = (
+				4205A701233728BF0078000F /* Screen */,
 				42E9F4E1233349E5003D6FD1 /* Resource */,
 				42A59CEF2312B88A001345BF /* Component */,
 				420BCFD62311223000069BE1 /* Util */,
@@ -356,6 +434,7 @@
 				42F845172310E10100D1F380 /* LaunchScreen.storyboard */,
 				42E9F4E6233375EC003D6FD1 /* R.generated.swift */,
 				42F8451A2310E10100D1F380 /* Info.plist */,
+				4205A71023372DA00078000F /* Localizable.strings */,
 				42F845142310E10100D1F380 /* Preview Content */,
 			);
 			path = Leech;
@@ -563,6 +642,7 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
 			);
 			mainGroup = 42F845002310E0FF00D1F380;
 			productRefGroup = 42F8450A2310E0FF00D1F380 /* Products */;
@@ -582,6 +662,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42F845192310E10100D1F380 /* LaunchScreen.storyboard in Resources */,
+				4205A70E23372DA00078000F /* Localizable.strings in Resources */,
 				42F845162310E10100D1F380 /* Preview Assets.xcassets in Resources */,
 				42E9F4E92333793D003D6FD1 /* Lato-Regular.ttf in Resources */,
 				42F845132310E10100D1F380 /* Assets.xcassets in Resources */,
@@ -719,6 +800,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4205A71523373E8E0078000F /* LeechViewController.swift in Sources */,
 				42E9F4F123338FEB003D6FD1 /* UIEdgeInsets+Extension.swift in Sources */,
 				42855F5523321D8E00530599 /* UIView+Configuration.swift in Sources */,
 				42855F5323321D7F00530599 /* UILabel+Configuration.swift in Sources */,
@@ -733,9 +815,11 @@
 				42A59CF22312B8F1001345BF /* BaseView.swift in Sources */,
 				420BCFD5231121BF00069BE1 /* Worker.swift in Sources */,
 				42E9F5062333DCE9003D6FD1 /* StorybookViewController.swift in Sources */,
+				4205A71D2337541D0078000F /* HomeViewPresenter.swift in Sources */,
 				42F2FBF8231D144D00A8F7ED /* Theme.swift in Sources */,
 				42A59CF52312B9B1001345BF /* BaseViewController.swift in Sources */,
 				42F845402310E32300D1F380 /* AuthenticationManagable.swift in Sources */,
+				4205A704233728F30078000F /* MainTabViewController.swift in Sources */,
 				420BCFD9231122B000069BE1 /* RxSwift+Extension.swift in Sources */,
 				42E9F4F72333B900003D6FD1 /* UIView+Style.swift in Sources */,
 				42F845452310E4D100D1F380 /* MainCoordinator.swift in Sources */,
@@ -745,6 +829,8 @@
 				42E9F4E7233375EC003D6FD1 /* R.generated.swift in Sources */,
 				42FD5BBB231287920003A91E /* CollectionViewCellWrappable.swift in Sources */,
 				42E9F5052333DCE9003D6FD1 /* LayoutModelTestable.swift in Sources */,
+				4205A719233743B10078000F /* LeechNavigationController.swift in Sources */,
+				4205A71B2337532F0078000F /* HomeViewPresentable.swift in Sources */,
 				42855F5B2332231800530599 /* ParagraphLabel+Style.swift in Sources */,
 				42F8453D2310E14400D1F380 /* AppCoordinator.swift in Sources */,
 				42E9F5102333DD49003D6FD1 /* LayoutModelTestingViewController.swift in Sources */,
@@ -758,6 +844,7 @@
 				42F2FBFA231D168D00A8F7ED /* Constant.swift in Sources */,
 				42E9F4EF23338C04003D6FD1 /* UIImage+Color.swift in Sources */,
 				42A59CEE2312B275001345BF /* ViewBuilder.swift in Sources */,
+				4205A7132337389A0078000F /* HomeViewController.swift in Sources */,
 				42F2FBFE231D1C3400A8F7ED /* ParagraphLabel.swift in Sources */,
 				42E9F4ED2333893E003D6FD1 /* UIButton+Style.swift in Sources */,
 				42E9F50B2333DD3C003D6FD1 /* Array+GetItem.swift in Sources */,
@@ -801,10 +888,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4205A71023372DA00078000F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4205A70F23372DA00078000F /* en */,
+				4205A71123372DA40078000F /* vi */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		42F845172310E10100D1F380 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				42F845182310E10100D1F380 /* Base */,
+				4205A70D23372D960078000F /* vi */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -816,6 +913,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -876,6 +974,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

@@ -10,6 +10,14 @@ import UIKit
 
 @_functionBuilder
 public struct StackViewBuilder {
+    public static func buildBlock(_ view: UIView) -> [UIView] {
+        return [view]
+    }
+
+    public static func buildBlock() -> [UIView] {
+        return []
+    }
+
     public static func buildBlock(_ views: UIView...) -> [UIView] {
         return views
     }

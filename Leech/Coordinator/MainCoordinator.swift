@@ -16,8 +16,7 @@ final class MainCoordinator: Coordinatable {
     }
 
     func start(onFinish: (() -> Void)?) {
-        let rootViewController = UIViewController()
-        rootViewController.view.backgroundColor = .green
+        let rootViewController = MainTabViewController()
         window?.rootViewController = rootViewController
     }
 }

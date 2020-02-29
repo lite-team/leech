@@ -13,4 +13,9 @@ extension ParagraphLabel {
         self.lineSpacing = lineSpacing
         return self
     }
+
+    public func grab(lineHeight: CGFloat) -> Self {
+        self.lineHeight = lineHeight
+        return self
+    }
 }

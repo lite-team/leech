@@ -36,8 +36,8 @@ extension UIView.Style where T: UIButton {
     func primary(size: Size) -> T {
         return view
             .grab(masksToBounds: true)
-            .grab(backgroundImage: UIImage(color: theme.primaryButton), for: .normal)
-            .grab(backgroundImage: UIImage(color: theme.primaryButton.withAlphaComponent(0.6)), for: .highlighted)
+            .grab(backgroundImage: UIImage(color: theme.primaryColor), for: .normal)
+            .grab(backgroundImage: UIImage(color: theme.primaryColor.withAlphaComponent(0.6)), for: .highlighted)
             .grab(cornerRadius: C.CornerRadius.large)
             .grab(contentEdgeInsets: UIEdgeInsets(
                 horizontal: C.Spacing.large, vertical: 0))
@@ -71,6 +71,6 @@ extension UIView.Style where T: UIButton {
         return view
             .grab(masksToBounds: true)
             .grab(font: size.font)
-            .grab(titleColor: theme.primaryButton, for: .normal)
+            .grab(titleColor: theme.primaryColor, for: .normal)
     }
 }
