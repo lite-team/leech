@@ -14,7 +14,9 @@ protocol HomeViewAction {
 }
 
 protocol HomeViewState {
-    var spentPerDay: Observable<String> { get }
+    var spentPerDayObservable: Observable<String> { get }
+    var viewModelsObservable: Observable<[UserView.Model]> { get }
+    var userViewModels: [UserView.Model] { get }
 }
 
 protocol HomeViewPresentable {

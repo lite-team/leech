@@ -73,6 +73,15 @@
 		4B35F505389A4593A251F195 /* Pods_LeechTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E0CF88B661746CC34AD736C /* Pods_LeechTests.framework */; };
 		584D14C8F51A74D467623FDE /* Pods_LeechUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF506B92946AAC059291761E /* Pods_LeechUITests.framework */; };
 		C4515E27631D28D86D2A95C3 /* Pods_Leech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15BBAFDF69C3AB14C7A7E6C6 /* Pods_Leech.framework */; };
+		D58345AC240BAF8400DD2BA0 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58345AB240BAF8300DD2BA0 /* UserView.swift */; };
+		D58345B0240BAFF400DD2BA0 /* GithubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58345AF240BAFF400DD2BA0 /* GithubUser.swift */; };
+		D58345B2240BB4F400DD2BA0 /* GithubAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58345B1240BB4F400DD2BA0 /* GithubAPIManager.swift */; };
+		D58345B5240BB53300DD2BA0 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58345B4240BB53300DD2BA0 /* APIManager.swift */; };
+		D58345B7240BB5AE00DD2BA0 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58345B6240BB5AE00DD2BA0 /* Request.swift */; };
+		D58345B9240BBEF800DD2BA0 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58345B8240BBEF800DD2BA0 /* String+Extension.swift */; };
+		D58345BB240BC7D600DD2BA0 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58345BA240BC7D600DD2BA0 /* Response.swift */; };
+		D58E945C240CA23200674200 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58E945B240CA23200674200 /* Reusable.swift */; };
+		D58E945E240CA31D00674200 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58E945D240CA31D00674200 /* UICollectionView+Reusable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -180,6 +189,15 @@
 		9167EBD2C2D34CBE7DABC844 /* Pods-Leech.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Leech.debug.xcconfig"; path = "Target Support Files/Pods-Leech/Pods-Leech.debug.xcconfig"; sourceTree = "<group>"; };
 		9662DE235E98E321B4FEE716 /* Pods-LeechTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeechTests.debug.xcconfig"; path = "Target Support Files/Pods-LeechTests/Pods-LeechTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AFACC060F90E8268E7EE3BCC /* Pods-LeechTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeechTests.release.xcconfig"; path = "Target Support Files/Pods-LeechTests/Pods-LeechTests.release.xcconfig"; sourceTree = "<group>"; };
+		D58345AB240BAF8300DD2BA0 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		D58345AF240BAFF400DD2BA0 /* GithubUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUser.swift; sourceTree = "<group>"; };
+		D58345B1240BB4F400DD2BA0 /* GithubAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPIManager.swift; sourceTree = "<group>"; };
+		D58345B4240BB53300DD2BA0 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		D58345B6240BB5AE00DD2BA0 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		D58345B8240BBEF800DD2BA0 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		D58345BA240BC7D600DD2BA0 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		D58E945B240CA23200674200 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		D58E945D240CA31D00674200 /* UICollectionView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reusable.swift"; sourceTree = "<group>"; };
 		DF506B92946AAC059291761E /* Pods_LeechUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeechUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -240,6 +258,7 @@
 				4205A7122337389A0078000F /* HomeViewController.swift */,
 				4205A71A2337532F0078000F /* HomeViewPresentable.swift */,
 				4205A71C2337541D0078000F /* HomeViewPresenter.swift */,
+				D58345AB240BAF8300DD2BA0 /* UserView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -290,6 +309,7 @@
 				42F2FBFB231D16AA00A8F7ED /* UIColor+Extension.swift */,
 				42E9F4EE23338C04003D6FD1 /* UIImage+Color.swift */,
 				42E9F4F023338FEB003D6FD1 /* UIEdgeInsets+Extension.swift */,
+				D58345B8240BBEF800DD2BA0 /* String+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -422,6 +442,7 @@
 		42F8450B2310E0FF00D1F380 /* Leech */ = {
 			isa = PBXGroup;
 			children = (
+				D58345AE240BAFE900DD2BA0 /* Model */,
 				4205A701233728BF0078000F /* Screen */,
 				42E9F4E1233349E5003D6FD1 /* Resource */,
 				42A59CEF2312B88A001345BF /* Component */,
@@ -470,6 +491,7 @@
 			isa = PBXGroup;
 			children = (
 				42F8453F2310E32300D1F380 /* AuthenticationManagable.swift */,
+				D58345B1240BB4F400DD2BA0 /* GithubAPIManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -489,6 +511,7 @@
 		42F845482310EE2900D1F380 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				D58345B3240BB52600DD2BA0 /* APIManager */,
 				42E9F4FA2333DCE9003D6FD1 /* Storybook */,
 				42F2FBF3231D13EA00A8F7ED /* UIConfiguration */,
 				42FD5BBE23128A8A0003A91E /* WrapView */,
@@ -534,6 +557,8 @@
 				42FD5BBA231287920003A91E /* CollectionViewCellWrappable.swift */,
 				42FD5BBC231289780003A91E /* CollectionReusableViewWrappable.swift */,
 				42FD5BBF23128AAA0003A91E /* ContentInsetView.swift */,
+				D58E945B240CA23200674200 /* Reusable.swift */,
+				D58E945D240CA31D00674200 /* UICollectionView+Reusable.swift */,
 			);
 			path = WrapView;
 			sourceTree = "<group>";
@@ -549,6 +574,24 @@
 				0AF4581E87782CE7253A9864 /* Pods-LeechUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D58345AE240BAFE900DD2BA0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D58345AF240BAFF400DD2BA0 /* GithubUser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D58345B3240BB52600DD2BA0 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				D58345B4240BB53300DD2BA0 /* APIManager.swift */,
+				D58345B6240BB5AE00DD2BA0 /* Request.swift */,
+				D58345BA240BC7D600DD2BA0 /* Response.swift */,
+			);
+			path = APIManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -804,6 +847,8 @@
 				42E9F4F123338FEB003D6FD1 /* UIEdgeInsets+Extension.swift in Sources */,
 				42855F5523321D8E00530599 /* UIView+Configuration.swift in Sources */,
 				42855F5323321D7F00530599 /* UILabel+Configuration.swift in Sources */,
+				D58345BB240BC7D600DD2BA0 /* Response.swift in Sources */,
+				D58E945E240CA31D00674200 /* UICollectionView+Reusable.swift in Sources */,
 				42F8454B2310EE4B00D1F380 /* Workable.swift in Sources */,
 				42FD5BBD231289780003A91E /* CollectionReusableViewWrappable.swift in Sources */,
 				42F2FBFC231D16AA00A8F7ED /* UIColor+Extension.swift in Sources */,
@@ -821,10 +866,13 @@
 				42F845402310E32300D1F380 /* AuthenticationManagable.swift in Sources */,
 				4205A704233728F30078000F /* MainTabViewController.swift in Sources */,
 				420BCFD9231122B000069BE1 /* RxSwift+Extension.swift in Sources */,
+				D58345B9240BBEF800DD2BA0 /* String+Extension.swift in Sources */,
+				D58E945C240CA23200674200 /* Reusable.swift in Sources */,
 				42E9F4F72333B900003D6FD1 /* UIView+Style.swift in Sources */,
 				42F845452310E4D100D1F380 /* MainCoordinator.swift in Sources */,
 				420BCFDB231125B500069BE1 /* RxSwift+RawObservable.swift in Sources */,
 				42F845432310E4C400D1F380 /* AuthenticationCoordinator.swift in Sources */,
+				D58345AC240BAF8400DD2BA0 /* UserView.swift in Sources */,
 				42855F5723321D9D00530599 /* UIImageView+Configuration.swift in Sources */,
 				42E9F4E7233375EC003D6FD1 /* R.generated.swift in Sources */,
 				42FD5BBB231287920003A91E /* CollectionViewCellWrappable.swift in Sources */,
@@ -834,10 +882,12 @@
 				42855F5B2332231800530599 /* ParagraphLabel+Style.swift in Sources */,
 				42F8453D2310E14400D1F380 /* AppCoordinator.swift in Sources */,
 				42E9F5102333DD49003D6FD1 /* LayoutModelTestingViewController.swift in Sources */,
+				D58345B7240BB5AE00DD2BA0 /* Request.swift in Sources */,
 				42E9F50C2333DD3C003D6FD1 /* UIViewController+RootViewController.swift in Sources */,
 				42E9F4F52333B53D003D6FD1 /* Edge.swift in Sources */,
 				42A59CED2312B275001345BF /* StackViewBuilder.swift in Sources */,
 				42E9F5022333DCE9003D6FD1 /* StorybookCategory.swift in Sources */,
+				D58345B5240BB53300DD2BA0 /* APIManager.swift in Sources */,
 				42F8450D2310E0FF00D1F380 /* AppDelegate.swift in Sources */,
 				420BCFDF2312787100069BE1 /* CellWrappable.swift in Sources */,
 				42E9F50F2333DD49003D6FD1 /* LayoutTestingViewController.swift in Sources */,
@@ -847,11 +897,13 @@
 				4205A7132337389A0078000F /* HomeViewController.swift in Sources */,
 				42F2FBFE231D1C3400A8F7ED /* ParagraphLabel.swift in Sources */,
 				42E9F4ED2333893E003D6FD1 /* UIButton+Style.swift in Sources */,
+				D58345B2240BB4F400DD2BA0 /* GithubAPIManager.swift in Sources */,
 				42E9F50B2333DD3C003D6FD1 /* Array+GetItem.swift in Sources */,
 				42E9F5032333DCE9003D6FD1 /* LayoutInstanceTestable.swift in Sources */,
 				42F2FC00231D23F700A8F7ED /* ParagraphLabel+Configuration.swift in Sources */,
 				42F845472310E50900D1F380 /* Coordinatable.swift in Sources */,
 				42855F5923321DB400530599 /* UIButton+Configuration.swift in Sources */,
+				D58345B0240BAFF400DD2BA0 /* GithubUser.swift in Sources */,
 				42E9F5072333DCE9003D6FD1 /* StorybookItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1039,7 +1091,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Leech/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1059,7 +1111,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "Leech/Preview\\ Content";
 				DEVELOPMENT_TEAM = V3J3RPAHU4;
-				ENABLE_PREVIEWS = YES;
+				ENABLE_PREVIEWS = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

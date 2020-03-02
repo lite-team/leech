@@ -7,11 +7,28 @@
 //
 
 import UIKit
+import RxSwift
 
 // MARK: - Life cycle
 final class HomeViewController: LeechViewController {
 
+    private typealias Cell = CollectionViewCellWrapper<ContentInsetView<UserView, HVContentInset<MediumEdge, MediumEdge>>>
+
     private let presenter: HomeViewPresentable
+
+    private lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 0
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.register(Cell.self)
+        collectionView.style().configure {
+            $0.backgroundColor = $1.backgroundColor
+        }
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        return collectionView
+    }()
 
     required init(presenter: HomeViewPresentable) {
         self.presenter = presenter
@@ -27,25 +44,54 @@ final class HomeViewController: LeechViewController {
 
         isTransparent = true
         setupState()
+
+        presenter.action.viewDidLoad()
     }
 
-    override var rightNavigationItems: [UIBarButtonItem]? {
-        return [
-            UIBarButtonItem(title: "NGHIA", style: .plain, target: nil, action: nil)
-        ]
+    override func setupView() {
+        view.addSubview(collectionView)
+        collectionView.snp.makeConstraints {
+            $0.leading.top.bottom.trailing.equalToSuperview()
+        }
     }
 }
 
 // MARK: - Private functions
 extension HomeViewController {
     private func setupState() {
-        presenter.state.spentPerDay.weakSubscribe(self, onNext: { (a, spentPerDay) in
-            print("NGHIA: \(spentPerDay)")
-        }).disposed(by: disposeBag)
+        presenter.state
+            .viewModelsObservable
+            .subscribeOn(MainScheduler.instance)
+            .weakSubscribe(self, onNext: { (s, userViewModels) in
+                s.collectionView.reloadData()
+            }).disposed(by: disposeBag)
     }
 }
 
-// MARK: - Public functions
+// MARK: - CollectionViewDataSource
+extension HomeViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return presenter.state.userViewModels.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let viewModel = presenter.state.userViewModels.getItem(at: indexPath.row) else { return UICollectionViewCell() }
+
+        let cell: Cell = collectionView.dequeueReusableCell(for: indexPath)
+        cell.wrapped.content.configure(viewModel: viewModel)
+        return cell
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width, height: 80)
+    }
+}
 
 // MARK: - Components
 extension HomeViewController {

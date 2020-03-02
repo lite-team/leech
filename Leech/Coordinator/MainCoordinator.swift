@@ -18,5 +18,6 @@ final class MainCoordinator: Coordinatable {
     func start(onFinish: (() -> Void)?) {
         let rootViewController = MainTabViewController()
         window?.rootViewController = rootViewController
+        window?.makeKeyAndVisible()
     }
 }

@@ -10,16 +10,12 @@ import UIKit
 
 @_functionBuilder
 public struct StackViewBuilder {
-    public static func buildBlock(_ view: UIView) -> [UIView] {
-        return [view]
-    }
-
-    public static func buildBlock() -> [UIView] {
-        return []
-    }
-
     public static func buildBlock(_ views: UIView...) -> [UIView] {
         return views
+    }
+
+    public static func buildBlock(_ view: UIView) -> UIView {
+        return view
     }
 }
 
@@ -28,13 +24,30 @@ public class VStackView: StackView {
         distribution: UIStackView.Distribution = .fill,
         alignment: UIStackView.Alignment = .fill,
         spacing: CGFloat = 0,
+        layoutMargins: UIEdgeInsets = .zero,
         @StackViewBuilder builder: () -> [UIView]) {
         super.init(
             axis: .vertical,
             distribution: distribution,
             alignment: alignment,
             spacing: spacing,
-            builder: builder)
+            layoutMargins: layoutMargins,
+            arrangedSubviews: builder())
+    }
+
+    public required init(
+        distribution: UIStackView.Distribution = .fill,
+        alignment: UIStackView.Alignment = .fill,
+        spacing: CGFloat = 0,
+        layoutMargins: UIEdgeInsets = .zero,
+        @StackViewBuilder builder: () -> UIView) {
+        super.init(
+            axis: .vertical,
+            distribution: distribution,
+            alignment: alignment,
+            spacing: spacing,
+            layoutMargins: layoutMargins,
+            arrangedSubviews: [builder()])
     }
 
     public required init(coder: NSCoder) {
@@ -47,13 +60,30 @@ public class HStackView: StackView {
         distribution: UIStackView.Distribution = .fill,
         alignment: UIStackView.Alignment = .fill,
         spacing: CGFloat = 0,
+        layoutMargins: UIEdgeInsets = .zero,
         @StackViewBuilder builder: () -> [UIView]) {
         super.init(
             axis: .horizontal,
             distribution: distribution,
             alignment: alignment,
             spacing: spacing,
-            builder: builder)
+            layoutMargins: layoutMargins,
+            arrangedSubviews: builder())
+    }
+
+    public required init(
+        distribution: UIStackView.Distribution = .fill,
+        alignment: UIStackView.Alignment = .fill,
+        spacing: CGFloat = 0,
+        layoutMargins: UIEdgeInsets = .zero,
+        @StackViewBuilder builder: () -> UIView) {
+        super.init(
+            axis: .horizontal,
+            distribution: distribution,
+            alignment: alignment,
+            spacing: spacing,
+            layoutMargins: layoutMargins,
+            arrangedSubviews: [builder()])
     }
 
     public required init(coder: NSCoder) {
@@ -62,19 +92,22 @@ public class HStackView: StackView {
 }
 
 public class StackView: UIStackView {
+
     public init(
         axis: NSLayoutConstraint.Axis,
         distribution: UIStackView.Distribution,
         alignment: UIStackView.Alignment,
         spacing: CGFloat,
-        @StackViewBuilder builder: () -> [UIView]) {
+        layoutMargins: UIEdgeInsets,
+        arrangedSubviews: [UIView]) {
         super.init(frame: .zero)
-
-        builder().forEach({ self.addArrangedSubview($0) })
+        arrangedSubviews.forEach { self.addArrangedSubview($0) }
         self.axis = axis
         self.alignment = alignment
         self.distribution = distribution
         self.spacing = spacing
+        isLayoutMarginsRelativeArrangement = true
+        self.layoutMargins = layoutMargins
     }
 
     public required init(coder: NSCoder) {

@@ -12,6 +12,11 @@ extension UIView {
     struct Style<T: UIView> {
         let theme: Themeable
         let view: T
+
+        @discardableResult func configure(_ block: (T, Themeable) -> Void) -> T {
+            block(view, theme)
+            return view
+        }
     }
 }
 

@@ -44,6 +44,8 @@ public class ContentInsetView<V: UIView, I: Insetable>: UIView {
     }
 }
 
+extension ContentInsetView: CollectionViewCellWrappable {}
+
 public class ContentInset<Top: Edgeable, Left: Edgeable, Bottom: Edgeable, Right: Edgeable>: Insetable {
     public static var insets: UIEdgeInsets {
         return UIEdgeInsets(

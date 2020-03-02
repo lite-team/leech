@@ -53,3 +53,5 @@ public class CollectionViewCellWrapper<T: UIView & CollectionViewCellWrappable>:
         wrapped.prepareForReuse()
     }
 }
+
+extension CollectionViewCellWrapper: Resuable {}

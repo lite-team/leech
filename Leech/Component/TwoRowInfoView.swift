@@ -71,11 +71,6 @@ extension TwoRowsInfoView {
     }
 }
 
-// MARK: - Concret types
-extension TwoRowsInfoView {
-    typealias NotificationCard = TwoRowsInfoView
-}
-
 extension TwoRowsInfoView: LayoutModelTestable {
     static var layoutTestViewModels: [(String, TwoRowsInfoView.Model)] {
         [
@@ -92,3 +87,5 @@ extension TwoRowsInfoView: LayoutModelTestable {
         ]
     }
 }
+
+extension TwoRowsInfoView: CollectionViewCellWrappable {}
