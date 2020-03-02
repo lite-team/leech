@@ -82,6 +82,7 @@
 		D58345BB240BC7D600DD2BA0 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58345BA240BC7D600DD2BA0 /* Response.swift */; };
 		D58E945C240CA23200674200 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58E945B240CA23200674200 /* Reusable.swift */; };
 		D58E945E240CA31D00674200 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58E945D240CA31D00674200 /* UICollectionView+Reusable.swift */; };
+		D58E9460240CFFC600674200 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58E945F240CFFC600674200 /* HomePresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +199,7 @@
 		D58345BA240BC7D600DD2BA0 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		D58E945B240CA23200674200 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		D58E945D240CA31D00674200 /* UICollectionView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reusable.swift"; sourceTree = "<group>"; };
+		D58E945F240CFFC600674200 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
 		DF506B92946AAC059291761E /* Pods_LeechUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeechUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -474,6 +476,7 @@
 			children = (
 				42F845232310E10100D1F380 /* LeechTests.swift */,
 				42F845252310E10100D1F380 /* Info.plist */,
+				D58E945F240CFFC600674200 /* HomePresenterTests.swift */,
 			);
 			path = LeechTests;
 			sourceTree = "<group>";
@@ -625,6 +628,7 @@
 				42F8451B2310E10100D1F380 /* Sources */,
 				42F8451C2310E10100D1F380 /* Frameworks */,
 				42F8451D2310E10100D1F380 /* Resources */,
+				E240184F3FE80BA45B4F53A9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -791,7 +795,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/Leech/R.generated.swift,
+				"$SRCROOT/Leech/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -834,6 +838,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E240184F3FE80BA45B4F53A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LeechTests/Pods-LeechTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LeechTests/Pods-LeechTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LeechTests/Pods-LeechTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -913,6 +934,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42F845242310E10100D1F380 /* LeechTests.swift in Sources */,
+				D58E9460240CFFC600674200 /* HomePresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

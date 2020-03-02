@@ -52,12 +52,12 @@ extension HomeViewPresenter: HomeViewAction {
 
 // MARK: - States
 extension HomeViewPresenter: HomeViewState {
-    var spentPerDayObservable: Observable<String> {
-        return "100$".toObservable
+    var spentPerDayDriver: Driver<String> {
+        return Driver.just("100$")
     }
 
-    var viewModelsObservable: Observable<[UserView.Model]> {
-        return userViewModelsRelay.asObservable()
+    var viewModelsDriver: Driver<[UserView.Model]> {
+        return userViewModelsRelay.asDriver()
     }
 
     var userViewModels: [UserView.Model] {
@@ -65,9 +65,9 @@ extension HomeViewPresenter: HomeViewState {
     }
 
     private func setupObserver() {
-        usersRelay.asObservable()
+        usersRelay.asDriver()
             .map { $0.map { UserView.Model(githubUser: $0) } }
-            .bind(to: userViewModelsRelay)
+            .drive(userViewModelsRelay)
             .disposed(by: disposeBag)
     }
 }
@@ -75,7 +75,11 @@ extension HomeViewPresenter: HomeViewState {
 // MARK: - Interactor
 extension HomeViewPresenter {
     private func loadData() {
-        properties.fetchUser.execute(payload: nil).bind(to: usersRelay).disposed(by: disposeBag)
+        properties.fetchUser
+            .execute(payload: nil)
+            .asDriver(onErrorJustReturn: usersRelay.value)
+            .drive(usersRelay)
+            .disposed(by: disposeBag)
     }
 }
 

@@ -60,10 +60,10 @@ final class HomeViewController: LeechViewController {
 extension HomeViewController {
     private func setupState() {
         presenter.state
-            .viewModelsObservable
-            .subscribeOn(MainScheduler.instance)
-            .weakSubscribe(self, onNext: { (s, userViewModels) in
-                s.collectionView.reloadData()
+            .viewModelsDriver
+            .asObservable()
+            .subscribe(onNext: { [weak self] _ in
+                self?.collectionView.reloadData()
             }).disposed(by: disposeBag)
     }
 }

@@ -9,11 +9,13 @@ target 'Leech' do
   pod 'RxSwift', '5.0.0'
   pod 'RxCocoa', '5.0.0'
   pod 'SnapKit', '5.0.0'
-  pod 'R.swift', '
+  pod 'R.swift'
 
   target 'LeechTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'RxSwift', '5.0.0'
+    pod 'RxCocoa', '5.0.0'
   end
 
   target 'LeechUITests' do

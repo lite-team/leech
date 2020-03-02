@@ -8,14 +8,15 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 protocol HomeViewAction {
     func viewDidLoad()
 }
 
 protocol HomeViewState {
-    var spentPerDayObservable: Observable<String> { get }
-    var viewModelsObservable: Observable<[UserView.Model]> { get }
+    var spentPerDayDriver: Driver<String> { get }
+    var viewModelsDriver: Driver<[UserView.Model]> { get }
     var userViewModels: [UserView.Model] { get }
 }
 

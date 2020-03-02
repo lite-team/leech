@@ -11,7 +11,7 @@ import SnapKit
 
 // MARK: - Model
 extension TwoRowsInfoView {
-    struct Model {
+    struct Model: Equatable {
         let title: String?
         let subtitle: String?
         let placeholder: UIColor?
