@@ -61,8 +61,7 @@ extension HomeViewController {
     private func setupState() {
         presenter.state
             .viewModelsDriver
-            .asObservable()
-            .subscribe(onNext: { [weak self] _ in
+            .drive(onNext: { [weak self] _ in
                 self?.collectionView.reloadData()
             }).disposed(by: disposeBag)
     }

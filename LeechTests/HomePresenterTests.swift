@@ -22,32 +22,35 @@ class HomePresenterTests: XCTestCase {
         let users = [GithubUser(avatar: "image", id: "2", name: "Nghia"),
                      GithubUser(avatar: "", id: "3", name: "Nghia")]
         let expectedViewModels = users.map { UserView.Model(githubUser: $0) }
-        let props = HomeViewPresenter.Properties(fetchUser: Worker.just(users))
+        let props = HomeViewPresenter.Properties(fetchUser: .just(users))
         let presenter: HomeViewPresentable = HomeViewPresenter(properties: props)
 
-        var actualViewModels = [UserView.Model]()
-        presenter.state.viewModelsDriver.asObservable().subscribe(onNext: { vms in
-            actualViewModels = vms
-        }).disposed(by: disposeBag)
+        let expectation = XCTestExpectation()
         presenter.action.viewDidLoad()
+        presenter.state.viewModelsDriver.distinctUntilChanged().drive(onNext: { vms in
+            XCTAssertEqual(expectedViewModels, vms)
+            expectation.fulfill()
+        }).disposed(by: disposeBag)
 
-        XCTAssertEqual(actualViewModels, expectedViewModels)
+
+        wait(for: [expectation], timeout: 5)
     }
 
     func testViewDidLoadFailure() {
         let expectedViewModels = [UserView.Model]()
-        let props = HomeViewPresenter.Properties(fetchUser: Worker.error(WorkerError.cannotFetchUser))
+        let props = HomeViewPresenter.Properties(fetchUser: .error(WorkerError.cannotFetchUser))
         let presenter: HomeViewPresentable = HomeViewPresenter(properties: props)
 
-        var actualViewModels = [UserView.Model]()
+        let expectation = XCTestExpectation()
+
         presenter.state.viewModelsDriver
-            .asObservable()
             .distinctUntilChanged()
-            .subscribe(onNext: { vms in
-            actualViewModels = vms
-        }).disposed(by: disposeBag)
+            .drive(onNext: { vms in
+                XCTAssertEqual(expectedViewModels, vms)
+                expectation.fulfill()
+            }).disposed(by: disposeBag)
         presenter.action.viewDidLoad()
 
-        XCTAssertEqual(actualViewModels, expectedViewModels)
+        wait(for: [expectation], timeout: 5)
     }
 }
