@@ -83,6 +83,11 @@
 		D58E945C240CA23200674200 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58E945B240CA23200674200 /* Reusable.swift */; };
 		D58E945E240CA31D00674200 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58E945D240CA31D00674200 /* UICollectionView+Reusable.swift */; };
 		D58E9460240CFFC600674200 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58E945F240CFFC600674200 /* HomePresenterTests.swift */; };
+		D5B87B2A245057B400B04128 /* PreviewDevice+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B87B25245057B400B04128 /* PreviewDevice+Enum.swift */; };
+		D5B87B2B245057B400B04128 /* UIView+SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B87B26245057B400B04128 /* UIView+SwiftUIView.swift */; };
+		D5B87B2C245057B400B04128 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B87B27245057B400B04128 /* SwiftUIView.swift */; };
+		D5B87B2D245057B400B04128 /* View+PreviewDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B87B28245057B400B04128 /* View+PreviewDevices.swift */; };
+		D5B87B2E245057B400B04128 /* ViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B87B29245057B400B04128 /* ViewConfigurable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +205,11 @@
 		D58E945B240CA23200674200 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		D58E945D240CA31D00674200 /* UICollectionView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reusable.swift"; sourceTree = "<group>"; };
 		D58E945F240CFFC600674200 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
+		D5B87B25245057B400B04128 /* PreviewDevice+Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PreviewDevice+Enum.swift"; sourceTree = "<group>"; };
+		D5B87B26245057B400B04128 /* UIView+SwiftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+SwiftUIView.swift"; sourceTree = "<group>"; };
+		D5B87B27245057B400B04128 /* SwiftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		D5B87B28245057B400B04128 /* View+PreviewDevices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+PreviewDevices.swift"; sourceTree = "<group>"; };
+		D5B87B29245057B400B04128 /* ViewConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewConfigurable.swift; sourceTree = "<group>"; };
 		DF506B92946AAC059291761E /* Pods_LeechUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeechUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -514,6 +524,7 @@
 		42F845482310EE2900D1F380 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				D5B87B24245057B400B04128 /* SwiftUIPreviews */,
 				D58345B3240BB52600DD2BA0 /* APIManager */,
 				42E9F4FA2333DCE9003D6FD1 /* Storybook */,
 				42F2FBF3231D13EA00A8F7ED /* UIConfiguration */,
@@ -595,6 +606,18 @@
 				D58345BA240BC7D600DD2BA0 /* Response.swift */,
 			);
 			path = APIManager;
+			sourceTree = "<group>";
+		};
+		D5B87B24245057B400B04128 /* SwiftUIPreviews */ = {
+			isa = PBXGroup;
+			children = (
+				D5B87B25245057B400B04128 /* PreviewDevice+Enum.swift */,
+				D5B87B26245057B400B04128 /* UIView+SwiftUIView.swift */,
+				D5B87B27245057B400B04128 /* SwiftUIView.swift */,
+				D5B87B28245057B400B04128 /* View+PreviewDevices.swift */,
+				D5B87B29245057B400B04128 /* ViewConfigurable.swift */,
+			);
+			path = SwiftUIPreviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -795,7 +818,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/Leech/R.generated.swift",
+				$SRCROOT/Leech/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -893,6 +916,8 @@
 				42F845452310E4D100D1F380 /* MainCoordinator.swift in Sources */,
 				420BCFDB231125B500069BE1 /* RxSwift+RawObservable.swift in Sources */,
 				42F845432310E4C400D1F380 /* AuthenticationCoordinator.swift in Sources */,
+				D5B87B2D245057B400B04128 /* View+PreviewDevices.swift in Sources */,
+				D5B87B2B245057B400B04128 /* UIView+SwiftUIView.swift in Sources */,
 				D58345AC240BAF8400DD2BA0 /* UserView.swift in Sources */,
 				42855F5723321D9D00530599 /* UIImageView+Configuration.swift in Sources */,
 				42E9F4E7233375EC003D6FD1 /* R.generated.swift in Sources */,
@@ -901,12 +926,15 @@
 				4205A719233743B10078000F /* LeechNavigationController.swift in Sources */,
 				4205A71B2337532F0078000F /* HomeViewPresentable.swift in Sources */,
 				42855F5B2332231800530599 /* ParagraphLabel+Style.swift in Sources */,
+				D5B87B2A245057B400B04128 /* PreviewDevice+Enum.swift in Sources */,
+				D5B87B2C245057B400B04128 /* SwiftUIView.swift in Sources */,
 				42F8453D2310E14400D1F380 /* AppCoordinator.swift in Sources */,
 				42E9F5102333DD49003D6FD1 /* LayoutModelTestingViewController.swift in Sources */,
 				D58345B7240BB5AE00DD2BA0 /* Request.swift in Sources */,
 				42E9F50C2333DD3C003D6FD1 /* UIViewController+RootViewController.swift in Sources */,
 				42E9F4F52333B53D003D6FD1 /* Edge.swift in Sources */,
 				42A59CED2312B275001345BF /* StackViewBuilder.swift in Sources */,
+				D5B87B2E245057B400B04128 /* ViewConfigurable.swift in Sources */,
 				42E9F5022333DCE9003D6FD1 /* StorybookCategory.swift in Sources */,
 				D58345B5240BB53300DD2BA0 /* APIManager.swift in Sources */,
 				42F8450D2310E0FF00D1F380 /* AppDelegate.swift in Sources */,

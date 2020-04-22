@@ -38,9 +38,11 @@ final class TwoRowsInfoView: BaseView {
             }
     }
 
+    // UIBuilder will use DSL syntax to layout programatically
+    // We can add more UIView component and see the changes in real time.
     override var bodyView: UIView {
         HStackView(alignment: .center, spacing: C.Spacing.medium) {
-            VStackView {
+            VStackView(spacing: C.Spacing.small) {
                 self.titleLabel
                 self.subtitleLabel
             }
@@ -62,7 +64,7 @@ final class TwoRowsInfoView: BaseView {
 }
 
 // MARK: - Public functions
-extension TwoRowsInfoView {
+extension TwoRowsInfoView: ViewConfigurable {
     func configure(viewModel: Model) {
         self.titleLabel.paragraphText = viewModel.title
         self.subtitleLabel.paragraphText = viewModel.subtitle
@@ -89,3 +91,30 @@ extension TwoRowsInfoView: LayoutModelTestable {
 }
 
 extension TwoRowsInfoView: CollectionViewCellWrappable {}
+
+#if canImport(SwiftUI) && DEBUG
+import SwiftUI
+@available(iOS 13.0, *)
+struct TestView_Preview: PreviewProvider {
+    
+    // - create Preview struct conform with PreviewProvider in Debug mode only
+    // - set up preview body is View converted from UIView through `.swiftUI` property
+    // can update body to see the changes in real time.
+    static var previews: some View {
+        HStackView(alignment: .center, layoutMargins: UIEdgeInsets(horizontal: 10, vertical: 10)) {
+            
+            TwoRowsInfoView()
+            .grab(viewModel:
+                TwoRowsInfoView.Model(
+                    title: "Nghia",
+                    subtitle: "Nguyen",
+                    placeholder: UIColor.blue.withAlphaComponent(0.5),
+                    isImageViewHidden: false))
+            
+        }
+        .swiftUI.previews(to: [.iphoneSE, .iphone11])
+    }
+}
+#endif
+
+
